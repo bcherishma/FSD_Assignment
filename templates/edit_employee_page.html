@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee List</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="{% static 'logo.ico' %}">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{% url 'Dashboard Page' %}">Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Employee List Page' %}">Employee List</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">{{ username }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'Logout Page' %}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col text-center">
+                <h2 class="text-primary">Employee List</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Employee Form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>Edit Employee</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="{% url 'Edit Employee Page' employee_id %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Leave empty if unchanged">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email:</label>
+                                <input type="email" id="email" name="email" class="form-control" placeholder="Leave empty if unchanged">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label">Mobile No.:</label>
+                                <input type="text" id="mobile" name="mobile" class="form-control" placeholder="Leave empty if unchanged">
+                            </div>
+                            <div class="mb-3">
+                                <label for="designation" class="form-label">Designation:</label>
+                                <select id="designation" name="designation" class="form-select">
+                                    <option value="">Leave empty if unchanged</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Sales">Sales</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Gender:</label>
+                                <div class="form-check">
+                                    <input type="radio" id="male" name="gender" value="Male" class="form-check-input">
+                                    <label for="male" class="form-check-label">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="female" name="gender" value="Female" class="form-check-input">
+                                    <label for="female" class="form-check-label">Female</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="radio" id="other" name="gender" value="Other" class="form-check-input">
+                                    <label for="other" class="form-check-label">Other</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Course:</label>
+                                <div class="form-check">
+                                    <input type="checkbox" id="mba" name="course" value="MBA" class="form-check-input">
+                                    <label for="mba" class="form-check-label">MBA</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="bca" name="course" value="BCA" class="form-check-input">
+                                    <label for="bca" class="form-check-label">BCA</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="bsc" name="course" value="BSC" class="form-check-input">
+                                    <label for="bsc" class="form-check-label">BSC</label>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">Image Upload:</label>
+                                <input type="file" id="image" name="image" class="form-control" accept=".png, .jpg, .jpeg">
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

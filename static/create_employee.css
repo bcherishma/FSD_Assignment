@@ -1,0 +1,150 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+.navbar {
+    background-color: #1b1b53; /* Navbar background color */
+    overflow: hidden; /* Clear floats */
+    display: flex; 
+    justify-content: space-around; /* Evenly space the items */
+    padding: 10px 0; /* Add some padding for better spacing */
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; 
+    margin: 0;
+    display: flex; 
+    justify-content: space-around; /* Evenly space the items */
+    width: 100%; /* Make the ul take full width */
+}
+
+.navbar li {
+    flex: 1; /* Allow each li to take equal space */
+    text-align: center; /* Center text */
+}
+
+.button {
+    display: inline-block; /* Make the button inline-block */
+    padding: 10px 15px; /* Button padding */
+    background-color: #007BFF; /* Button background color */
+    color: white; 
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+.dashboard-bar {
+    background-color: #268bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Body Background */
+body {
+    background: url('https://img.freepik.com/free-vector/abstract-background-design-with-stars-blue_53876-59271.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Bar */
+.bg-primary {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Container */
+.container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Form Labels */
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="file"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="file"]:focus,
+form select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Gender and Course Options */
+form .form-check-label {
+    margin-right: 15px;
+    font-weight: normal;
+    color: #555;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background: linear-gradient(145deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(145deg, #0056b3, #003a7a);
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button[type="submit"]:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    button[type="submit"] {
+        font-size: 14px;
+    }
+}
